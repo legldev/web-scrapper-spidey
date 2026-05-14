@@ -1,25 +1,14 @@
 {
-  "name": "apex_test",
+  "name": "web-scrapper-spidey",
   "version": "1.0.0",
-  "description": "apex test web scrapping",
-  "main": "index.js",
+  "description": "Frontend-only web scraping tool",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon backend/index.js",
+    "dev": "npm start --prefix client",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "install:client": "npm install --prefix client",
+    "build": "npm run build --prefix client",
+    "test": "npm test --prefix client -- --watchAll=false"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "body-parser": "^1.19.0",
-    "cheerio": "^1.0.0-rc.3",
-    "concurrently": "^5.3.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.9.27",
-    "rootpath": "^0.1.2",
-    "scrape-it": "^5.2.3"
-  }
+  "license": "ISC"
 }
