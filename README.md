@@ -14,8 +14,8 @@ Web Scrapper Spidey es una herramienta frontend-only para inspeccionar paginas w
 
 ## Stack
 
-- React 16
-- Create React App
+- React 19
+- Vite
 - CSS plano
 - Vercel para deploy estatico
 
@@ -24,15 +24,12 @@ Web Scrapper Spidey es una herramienta frontend-only para inspeccionar paginas w
 - Node.js
 - npm
 
-El proyecto usa `react-scripts@3`, por eso los scripts incluyen `NODE_OPTIONS=--openssl-legacy-provider` para funcionar correctamente con versiones modernas de Node.
-
 ## Instalacion
 
 Desde la raiz del proyecto:
 
 ```bash
 npm install
-npm install --prefix client
 ```
 
 ## Desarrollo local
@@ -59,19 +56,13 @@ Inicia la app en modo desarrollo.
 npm run build
 ```
 
-Genera el build de produccion en `client/build`.
+Genera el build de produccion en `dist`.
 
 ```bash
 npm test
 ```
 
-Ejecuta los tests del cliente sin modo watch.
-
-```bash
-npm run install:client
-```
-
-Instala dependencias dentro de `client`.
+Ejecuta los tests con Vitest.
 
 ## Como usar la app
 
@@ -126,9 +117,9 @@ El proyecto incluye `vercel.json`, asi que puede importarse en Vercel usando la 
 
 Configuracion esperada:
 
-- Install Command: `npm install --prefix client`
-- Build Command: `npm run build --prefix client`
-- Output Directory: `client/build`
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `dist`
 
 Vercel toma esos valores desde `vercel.json`. La app es estatica y no necesita funciones serverless ni backend.
 
@@ -136,13 +127,16 @@ Vercel toma esos valores desde `vercel.json`. La app es estatica y no necesita f
 
 ```text
 .
-├── client/
-│   ├── public/
-│   └── src/
-│       ├── App.js
-│       ├── App.css
-│       └── App.test.js
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── App.test.jsx
+│   ├── index.css
+│   └── main.jsx
+├── index.html
 ├── package.json
+├── vite.config.js
 ├── vercel.json
 └── README.md
 ```
@@ -159,8 +153,8 @@ Vercel toma esos valores desde `vercel.json`. La app es estatica y no necesita f
 Comandos usados para validar el proyecto:
 
 ```bash
-npm test -- --watchAll=false
-npm run build --prefix client
+npm test
+npm run build
 ```
 
 ---
