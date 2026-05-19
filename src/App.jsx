@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./App.css";
 
 const proxyTemplates = [
@@ -341,7 +342,9 @@ function App() {
   };
 
   return (
-    <main className="scraper-app">
+    <>
+      <SpeedInsights />
+      <main className="scraper-app">
       <section className="workspace">
         <aside className="control-panel">
           <div className="brand">
@@ -527,6 +530,7 @@ function App() {
         </section>
       </section>
     </main>
+    </>
   );
 }
 
